@@ -221,7 +221,6 @@ function reverseUpcaseString(str){
   return str.toUpperCase().split("").reverse().join("");
 }
 
-
 /*-----------------------------------------------------------------------------
 Challenge: 08-removeEnds
 
@@ -242,7 +241,14 @@ removeEnds('a'); //=> "" (empty string)
 //use
 //str.substring(1) removes the first 
 
-
+function removeEnds(str) {
+  if (str.length < 3) return '';
+  var result= '';
+  for (var i = 1; i < str.length - 1; i++) {
+    result += str.charAt(i);
+  }
+  return result;
+}
 
 
 
