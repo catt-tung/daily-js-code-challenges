@@ -250,8 +250,6 @@ function removeEnds(str) {
   return result;
 }
 
-
-
 /*-----------------------------------------------------------------------------
 Challenge: 09-charCount
 
@@ -271,21 +269,19 @@ charCount('Today is fantastic!') //=> { T: 1, o: 1, d: 1, a: 3, y: 1, ' ': 2, i:
 -----------------------------------------------------------------------------*/
 // Your solution for 09-charCount here:
 //split the string, write a reduce function that returns an object that creates a key value pair 
-function charCount(string) {
-  let arr = string.split('')
-  let countedChar = arr.reduce(function(allChar, char) {
-    if (char in allChar) {
-      allChar[char]++
+function charCount(str) {
+  var result = {};
+  for (var i = 0; i < str.length; i++) {
+    var char = str.charAt(i);
+    // already seen this char?
+    if (result[char]) {
+      result[char]++;
+    } else {
+      result[char] = 1;
     }
-    else {
-      allChar[char] = 1
-    }
-  }, {});
-  return allChar
+  }
+  return result;
 }
-
-
-
 
 /*-----------------------------------------------------------------------------
 Challenge: 10-formatWithPadding
