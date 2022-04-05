@@ -132,7 +132,6 @@ function addList(){
 }
 
 
-
 // function addList() {
   // let total = 0
   // for (let i = 0; i< arguments.length; i++){
@@ -159,6 +158,7 @@ computeRemainder(10,2) //=> 0
 computeRemainder(4,0) //=> Infinity
 computeRemainder(10.5, 3) //=> 1.5
 -----------------------------------------------------------------------------*/
+// Your solution for 05-computeRemainder:
 
 function computeRemainder (end, divis){
   if (divis === 0) {
@@ -168,12 +168,6 @@ function computeRemainder (end, divis){
     return rem
   }
 }
-
-
-// Your solution for 05-computeRemainder:
-
-
-
 
 
 /*-----------------------------------------------------------------------------
@@ -194,7 +188,16 @@ range(1,1) //=> []
 range(5,2) //=> "First argument must be less than second"
 -----------------------------------------------------------------------------*/
 // Your solution for 06-range here:
-
+function range(start, finish) {
+  if (start > finish) return 'First argument must be less than second';
+  
+  var range = [];
+  for (var n = start; n < finish; n++) {
+    range.push(n);
+  }
+  
+  return range;
+}
 
 
 
