@@ -470,8 +470,6 @@ function mergeObjects(...objects){
   return Object.assign(...objects)
 }
 
-
-
 /*-----------------------------------------------------------------------------
 Challenge: 16-findHighestPriced
 
@@ -509,27 +507,17 @@ findHighestPriced([
 //loop through to get the highest number in the price 
 //if there are 2, return the one with the higher index
 //return the object without mutating it with the line
-// function findHighestPriced(arr){
-//   for (let i=0; i < arr.length; i++){
-//     if(arr[i].price > arr[i+1].price){
-//       largestPrice = arr[i]
-//     }
-//   }
-//   return largestPrice
-// }
-
-// function findHighestPriced(arr){
-//   arr.forEach(i => console.log(i.price))
-// }
 
 function findHighestPriced(arr){
-  let highestPriced = 0
-  arr.forEach(function(sku){
-    if(sku.price > highestPriced){
-      highestPriced = sku.price
+  let highestPrice = 0
+  let finalObj;
+  arr.forEach(sku => {
+    if (sku.price > highestPrice){
+      highestPrice = sku.price;
+      finalObj = sku;
     }
-    return console.log(highestPriced)
   })
+  return finalObj
 } 
 
 /*-----------------------------------------------------------------------------
