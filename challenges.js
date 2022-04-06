@@ -548,9 +548,13 @@ mapArray( ['rose', 'tulip', 'daisy'], function(f, i) {
 -----------------------------------------------------------------------------*/
 // Your solution for 17-mapArray here:
 
-
-
-
+function mapArray(arr, cbf){
+  let newArray = []
+  arr.forEach((elem, idx) => {
+    newArray.push(cbf(elem, idx));
+  })
+  return newArray
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 18-reduceArray
