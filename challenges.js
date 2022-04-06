@@ -273,7 +273,6 @@ function charCount(str) {
   var result = {};
   for (var i = 0; i < str.length; i++) {
     var char = str.charAt(i);
-    // already seen this char?
     if (result[char]) {
       result[char]++;
     } else {
@@ -314,6 +313,14 @@ formatWithPadding(1234, '*', 3); //=> "1234"
 //   return arr
 // }
 // formatWithPadding()
+
+function formatWithPadding(int, char, length) {
+  var result = int.toFixed(0);
+  while (result.length < length) {
+    result = char + result;
+  }
+  return result;
+}
 
 
 // function formatWithPadding(int, str, pad){
