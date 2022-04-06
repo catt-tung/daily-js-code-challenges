@@ -590,9 +590,13 @@ reduceArray( ['Yes', 'No', 'Yes', 'Maybe'], function(acc, v) {
 -----------------------------------------------------------------------------*/
 // Your solution for 18-reduceArray here:
 
-
-
-
+function reduceArray(arr, cbf, firstAcc){
+  let acc = firstAcc;
+  arr.forEach((elem, idx) => {
+    acc = cbf(acc, elem, idx);
+  })
+  return acc
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 19-flatten
