@@ -813,9 +813,17 @@ isWinningTicket( [ ['ABC', 66], ['dddd', 15], ['Hello', 108] ] ) // => false
 -----------------------------------------------------------------------------*/
 // Your solution for 24-isWinningTicket here:
 
-
-
-
+function isWinningTicket(ticket){
+  let winner = true;
+  for (let i = 0; i < ticket.length; i++) {
+    let charFromNumber = String.fromCharCode(ticket[i][1]);
+    if (!ticket[i][0].includes(charFromNumber)) {
+      winner = false;
+      break;
+    }
+  }
+  return winner;
+}
 
 /*-----------------------------------------------------------------------------
 Challenge: 25-getNumForIP
